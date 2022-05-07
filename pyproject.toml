@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "get_latest_proton_ge"
+version = "0.1.0"
+description = ""
+authors = ["mcgillij <mcgillivray.jason@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+requests = "^2.27.1"
+
+[tool.poetry.dev-dependencies]
+ipython = "^8.1.1"
+neovim = "^0.3.1"
+black = "^22.3.0"
+flake8 = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
