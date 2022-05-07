@@ -10,6 +10,10 @@ Release = namedtuple("Release", ["name", "download_link"])
 GH_TOKEN = os.getenv("GH_TOKEN")
 HEADER = {"Authorization": f"token {GH_TOKEN}"}
 
+USERNAME = "GloriousEggroll"
+REPONAME = "proton-ge-custom"
+GH_R_API = f"https://api.github.com/repos/{USERNAME}/{REPONAME}/releases"
+
 req = requests.Session()
 # If a token is passed in you won't get rate limited if you rerun this a bunch
 if GH_TOKEN:
@@ -57,12 +61,8 @@ def cleanup(release):
 
 
 if __name__ == "__main__":
-    USERNAME = "GloriousEggroll"
-    REPONAME = "proton-ge-custom"
-    GH_R_API = f"https://api.github.com/repos/{USERNAME}/{REPONAME}/releases"
 
     release_list = get_release_list(GH_R_API)
-
     selected_release = release_list[0]
     download_release(selected_release)
     extract_release(selected_release)
